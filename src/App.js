@@ -1,9 +1,7 @@
+import Router from "./router/Router";
+
 function App() {
-  return (
-    <>
-      <h1>Bismillah</h1>
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
