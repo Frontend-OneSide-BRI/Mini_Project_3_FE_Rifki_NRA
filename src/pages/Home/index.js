@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 function Home() {
-  return <h1>ini halaman Home</h1>;
+  return <h1 className="text-danger">ini halaman Home</h1>;
 }
 
 export default Home;
