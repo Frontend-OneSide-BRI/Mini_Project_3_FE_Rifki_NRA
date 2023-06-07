@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { RatingAtom } from "..";
 function CardOverlay(props) {
   return (
-    <section>
+    <section className="card-overlay">
       <div className="img-kategori mb-3">
         <RatingAtom rating  = {props.rating} />
         <img

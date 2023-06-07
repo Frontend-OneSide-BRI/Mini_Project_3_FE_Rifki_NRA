@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   font-size: 18px;
   color: #fff;
+  padding: 10px;
 }
 
 
@@ -180,6 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 /* End banner */
 
 /* TOP 3 Movie */
+
 .categorySection h1 {
   font-size: 34px;
   font-weight: bold;
@@ -193,6 +195,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 350px;
   height: 500px;
   position: relative;
+  border: 3px solid #fb93ff;
+  border-radius: 5px;
   display: inline-block;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 }
