@@ -76,6 +76,9 @@ h1, h2, h3, h4, h5, h6 {
 /* end Navbar */
 
 /* Carousel */
+.slider{
+  position: relative;
+}
 .carousel-item {
   height: 600px;
   width: 100%;
@@ -145,7 +148,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1000px) {
   .banner {
-    height: 350px;
     width: 75%;
   }
 
@@ -156,9 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 720px) {
   .banner {
-    height: 350px;
     width: 75%;
-    bottom: 100px;
   }
 
   .banner h1 {
@@ -166,9 +166,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   @media (max-width: 470px) {
     .banner {
-      height: 350px;
-      width: 80%;
-      bottom: 100px;
+      width: 90%;
     }
     .container-swipper {
       width: 150px !important;

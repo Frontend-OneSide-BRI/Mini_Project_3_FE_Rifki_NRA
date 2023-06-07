@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Banner from "./Banner";
 
 function Carousel() {
   return (
@@ -39,6 +40,7 @@ function Carousel() {
           </div>
         </div>
       </div>
+      <Banner />
     </div>
   );
 }
