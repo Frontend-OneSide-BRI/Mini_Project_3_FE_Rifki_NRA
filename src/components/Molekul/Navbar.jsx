@@ -43,7 +43,7 @@ function Navbar() {
 
   return (
     <nav className={navbarClass}>
-      <div className="container-fluid">
+      <div className="container">
         <a className="navbar-brand d-flex" href="#">
           <div className="icon">
             <img src={Icon} alt="" />

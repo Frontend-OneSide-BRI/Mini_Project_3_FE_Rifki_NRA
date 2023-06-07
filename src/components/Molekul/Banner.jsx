@@ -3,16 +3,15 @@ import ButtonAtom from "../Atom/button";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Banner(props) {
-const data = props.data
+  const data = props.data;
   return (
-
-    <div className="container-fluid">
+    <div className="container">
       <div className="banner p-4">
         <div className="heading mb-4">
-          <h1>MR. MOVIES</h1>
-        </div> 
+          <h1>Unlimited Movies, TV shows and more</h1>
+        </div>
         <div className="body mb-2">
-        {/* <Swiper 
+          {/* <Swiper 
         grabCursor
         breakpoints={{
             1000:{
@@ -36,8 +35,7 @@ const data = props.data
           </Swiper> */}
         </div>
         <div className="footer">
-        <ButtonAtom val_name= "Show Movies" />
-
+          <ButtonAtom val_name="Show Movies" />
         </div>
       </div>
     </div>
