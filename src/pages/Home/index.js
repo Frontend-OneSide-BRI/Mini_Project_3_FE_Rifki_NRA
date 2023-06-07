@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import Carousel from "../../components/Molekul/Carousel";
 function Home() {
-  return <h1 className="text-danger">ini halaman Home</h1>;
+  return (
+    <>
+      <Carousel />
+    </>
+  );
 }
 
 export default Home;
