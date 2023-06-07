@@ -1,8 +1,14 @@
+import { Navbar } from "../components";
 import Home from "../pages/Home";
 
 const routes = [
   {
-    element: <Home />,
+    element: (
+      <>
+        <Navbar />
+        <Home />
+      </>
+    ),
     path: "/",
   },
   {
