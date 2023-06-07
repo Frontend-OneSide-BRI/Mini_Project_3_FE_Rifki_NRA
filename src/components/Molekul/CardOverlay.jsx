@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-
+import { RatingAtom } from "..";
 function CardOverlay(props) {
   return (
-    <section id="artist">
+    <section>
       <div className="img-kategori mb-3">
+        <RatingAtom rating  = {props.rating} />
         <img
           src={props.urlImg}
           className=""
