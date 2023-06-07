@@ -32,11 +32,11 @@ function Navbar() {
   switch (location.pathname) {
     case "/":
       if (scrollDirection === "down") {
-        navbarClass += " bg-dark";
+        navbarClass += " bg-darkpurple";
       }
       break;
     default:
-      navbarClass += " bg-dark";
+      navbarClass += " bg-darkpurple";
       break;
   }
 

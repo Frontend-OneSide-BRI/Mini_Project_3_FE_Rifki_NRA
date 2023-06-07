@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Carousel from "../../components/Molekul/Carousel";
+import { Carousel, Banner } from "../../components";
 function Home() {
   return (
     <>
       <Carousel />
+      <Banner />
     </>
   );
 }
