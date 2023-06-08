@@ -20,12 +20,12 @@ function Top3Movie() {
       {status === "loading" && <div>Loading...</div>}
       {status === "failed" && <div>Error: {error}</div>}
       {status === "succeeded" &&
-        topRatedMovies.results.slice(0, 3).map((movie) => (
+        topRatedMovies.results?.slice(0, 3).map((movie) => (
           <CardOverlay
             key={movie.id}
             urlImg={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             name={movie.title}
-            rating ={movie.vote_average}
+            rating={movie.vote_average}
           />
         ))}
     </div>

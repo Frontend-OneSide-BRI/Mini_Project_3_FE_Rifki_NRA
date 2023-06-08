@@ -5,8 +5,13 @@ body {
   background-color: #000;
 }
 /* Making Class */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bebas Neue', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif;
 }
 
 /* End Making Clas */
@@ -30,8 +35,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   padding: 10px;
 }
-
-
 
 /* End Atom */
 
@@ -76,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 /* end Navbar */
 
 /* Carousel */
-.slider{
+.slider {
   position: relative;
 }
 .carousel-item {
@@ -128,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 .banner h1 {
   text-shadow: 5px 5px 10px #000;
   font-size: 60px;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -179,6 +182,10 @@ h1, h2, h3, h4, h5, h6 {
 /* End banner */
 
 /* TOP 3 Movie */
+
+.card-overlay{
+  margin-bottom: 10px;
+}
 
 .categorySection h1 {
   font-size: 34px;
@@ -240,4 +247,86 @@ h1, h2, h3, h4, h5, h6 {
   color: #000; /* old IE */
   background-color: #000; /* Modern Browsers */
 }
+
+@media (max-width : 720px) {
+  .img-kategori {
+    width: 100%;
+    height: 100%;
+  }
+}
 /* End Top 3 Movie */
+
+/* List Galerry */
+
+.img-listCard {
+  width: 100%;
+  height: 100%;
+}
+
+.img-listCard img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.img-listCard:hover .overlayGallery {
+  opacity: 1;
+}
+
+.overlayGallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 108%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlayGallery p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.navigation-kategori .nav-link.active {
+  border-bottom: 2px solid red; /* Ubah warna dan gaya garis sesuai kebutuhan */
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button:hover .fa.fa-search {
+  color: blue;
+}
+
+button:hover {
+  color: blue;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
+
+/* End List Gallery */

@@ -8,7 +8,7 @@ export const fetchNowPlayingMovies = createAsyncThunk(
   "movies/fetchNowPlayingMovies",
   async () => {
     const response = await axios.get(
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+      "https://api.themoviedb.org/3/movie/now_playing",
       {
         headers: {
           Authorization: `Bearer ${API_KEY}`,
