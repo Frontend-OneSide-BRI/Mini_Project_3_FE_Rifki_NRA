@@ -68,9 +68,9 @@ const MovieDetail = () => {
                     </li>
                   </ul>
                   <p class="lead">
-                    <router-link to="/movie" class="btn btn-darkpurple btn-md">
+                    <a href="/" class="btn btn-darkpurple btn-md">
                       Back To List Movie
-                    </router-link>
+                    </a>
                   </p>
                 </div>
               </div>

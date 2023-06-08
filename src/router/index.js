@@ -30,7 +30,6 @@ const routes = [
       <>
         <Navbar />
         <MovieDetail />
-        <Footer />
       </>
     ),
     path: "/detail/:movieId",

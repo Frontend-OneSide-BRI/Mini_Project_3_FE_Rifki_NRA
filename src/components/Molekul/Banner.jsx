@@ -13,7 +13,7 @@ function Banner(props) {
         <div className="body mb-2">
         </div>
         <div className="footer">
-          <ButtonAtom val_name="Show Movies" />
+          <a href="/movies" className="btn btn-darkpurple">Show Movies</a>
         </div>
       </div>
     </div>
