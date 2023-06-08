@@ -73,7 +73,7 @@ function Navbar() {
             </Link>
             <Link
               className={`nav-link ${
-                location.pathname === "/gallery" ? "active" : ""
+                location.pathname === "/movies" ? "active" : ""
               }`}
               to="/movies"
             >

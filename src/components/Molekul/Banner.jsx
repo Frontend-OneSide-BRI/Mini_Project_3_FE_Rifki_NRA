@@ -11,28 +11,6 @@ function Banner(props) {
           <h1>Unlimited Movies, TV shows and more</h1>
         </div>
         <div className="body mb-2">
-          {/* <Swiper 
-        grabCursor
-        breakpoints={{
-            1000:{
-                slidesPerView: 5,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            350: {
-              slidesPerView: 2,
-            },
-          }}
-        >
-            {data?.map((img)=>(
-                <SwiperSlide  key={img.id}>
-                <div className="container-swipper">
-                <img src={img.image} alt="" />
-                </div>
-                </SwiperSlide>
-            ))}          
-          </Swiper> */}
         </div>
         <div className="footer">
           <ButtonAtom val_name="Show Movies" />

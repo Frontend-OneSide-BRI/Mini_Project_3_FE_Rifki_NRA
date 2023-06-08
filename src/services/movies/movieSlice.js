@@ -3,7 +3,14 @@ import moviesApi from "./moviesApi";
 
 const moviesSlice = createSlice({
   name: "movies",
-  initialState: { nowPlaying: [], topRated: [], status: "idle", error: null },
+  initialState: {
+    nowPlaying: [],
+    topRated: [],
+    popular: [],
+    isLoading: false,
+    status: "idle",
+    error: null,
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -26,6 +33,17 @@ const moviesSlice = createSlice({
         state.topRated = action.payload;
       })
       .addCase(moviesApi.fetchTopRatedMovies.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(moviesApi.fetchPopularMovies.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(moviesApi.fetchPopularMovies.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.movies = action.payload;
+      })
+      .addCase(moviesApi.fetchPopularMovies.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

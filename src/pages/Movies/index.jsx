@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
+import React from "react";
+import { MoviesList } from "../../components";
 
 function Movies() {
-    return ( <><h1>Ini halaman Movies</h1></> );
+  return (
+    <div className="moviesPage container">
+      <h1>Popular Movies</h1>
+      <MoviesList />
+    </div>
+  );
 }
 
 export default Movies;
