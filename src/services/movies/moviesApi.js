@@ -77,9 +77,34 @@ export const fetchMovieDetail = createAsyncThunk(
   }
 );
 
+export const searchMovies = createAsyncThunk(
+  "movies/searchMovies",
+  async (query) => {
+    try {
+      const response = await axios.get(
+        "https://api.themoviedb.org/3/search/movie",
+        {
+          params: {
+            query: query,
+          },
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            Accept: "application/json",
+          },
+        }
+      );
+
+      return response.data.results;
+    } catch (error) {
+      throw new Error("Error searching movies.");
+    }
+  }
+);
+
 export default {
   fetchNowPlayingMovies,
   fetchTopRatedMovies,
   fetchPopularMovies,
   fetchMovieDetail,
+  searchMovies,
 };

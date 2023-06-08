@@ -75,14 +75,14 @@ function Navbar() {
               Movies
             </Link>
             {/*  Button modal*/}
-            <button
-              type="button"
-              className="nav-link"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+            <Link
+              className={`nav-link ${
+                location.pathname === "/login" ? "active" : ""
+              }`}
+              to="/login"
             >
               Login
-            </button>
+            </Link>
           </div>
         </div>
       </div>
