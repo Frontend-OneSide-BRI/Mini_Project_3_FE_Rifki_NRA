@@ -29,6 +29,7 @@ function ListMoviesHome() {
               urlImg={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               name={movie.title}
               rating={movie.vote_average}
+              paramID={movie.id}
               />
             ))
           ) : (

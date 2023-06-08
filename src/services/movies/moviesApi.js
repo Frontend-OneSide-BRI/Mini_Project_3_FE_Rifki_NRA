@@ -61,8 +61,25 @@ export const fetchTopRatedMovies = createAsyncThunk(
   }
 );
 
+export const fetchMovieDetail = createAsyncThunk(
+  "movies/fetchMovieDetail",
+  async (movieId) => {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+          Accept: "application/json",
+        },
+      }
+    );
+    return response.data;
+  }
+);
+
 export default {
   fetchNowPlayingMovies,
   fetchTopRatedMovies,
   fetchPopularMovies,
+  fetchMovieDetail,
 };

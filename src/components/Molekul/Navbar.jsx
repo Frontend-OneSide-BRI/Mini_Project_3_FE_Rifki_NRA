@@ -29,18 +29,13 @@ function Navbar() {
   // Logic Navbar Class
   let navbarClass = "navbar navbar-expand-lg navbar-dark fixed-top";
 
-  switch (location.pathname) {
-    case "/":
-      if (scrollDirection === "down") {
-        navbarClass += " bg-darkpurple";
-      }
-      break;
-    default:
+  if (location.pathname === "/" || location.pathname.startsWith("/detail")) {
+    if (scrollDirection === "down") {
       navbarClass += " bg-darkpurple";
-      break;
+    }
+  } else {
+    navbarClass += " bg-darkpurple";
   }
-
-
   return (
     <nav className={navbarClass}>
       <div className="container">
@@ -63,7 +58,7 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-          <Link
+            <Link
               className={`nav-link ${
                 location.pathname === "/" ? "active" : ""
               }`}

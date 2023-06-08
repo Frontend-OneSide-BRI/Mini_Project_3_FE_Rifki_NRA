@@ -1,6 +1,7 @@
 import { Navbar } from "../components";
 import Home from "../pages/Home";
 import Movies from "../pages/Movies";
+import MovieDetail from "../pages/Movies/detail";
 
 const routes = [
   {
@@ -20,6 +21,15 @@ const routes = [
       </>
     ),
     path: "/movies",
+  },
+  {
+    element: (
+      <>
+        <Navbar />
+        <MovieDetail />
+      </>
+    ),
+    path: "/detail/:movieId",
   },
   {
     element: <h1>Not found</h1>,

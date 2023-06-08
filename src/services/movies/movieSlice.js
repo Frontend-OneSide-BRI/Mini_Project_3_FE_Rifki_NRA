@@ -7,9 +7,9 @@ const moviesSlice = createSlice({
     nowPlaying: [],
     topRated: [],
     popular: [],
-    isLoading: false,
     status: "idle",
     error: null,
+    detail: null, // Menambah state untuk detail film
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -41,9 +41,20 @@ const moviesSlice = createSlice({
       })
       .addCase(moviesApi.fetchPopularMovies.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.movies = action.payload;
+        state.popular = action.payload;
       })
       .addCase(moviesApi.fetchPopularMovies.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(moviesApi.fetchMovieDetail.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(moviesApi.fetchMovieDetail.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.detail = action.payload;
+      })
+      .addCase(moviesApi.fetchMovieDetail.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

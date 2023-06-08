@@ -3,7 +3,6 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #000;
-  
 }
 /* Making Class */
 h1,
@@ -137,7 +136,6 @@ h6 {
   letter-spacing: 1px;
 }
 
-
 @media (max-width: 1000px) {
   .banner {
     width: 75%;
@@ -166,7 +164,7 @@ h6 {
 
 /* TOP 3 Movie */
 
-.card-overlay{
+.card-overlay {
   margin-bottom: 10px;
 }
 
@@ -231,7 +229,7 @@ h6 {
   background-color: #000; /* Modern Browsers */
 }
 
-@media (max-width : 720px) {
+@media (max-width: 720px) {
   .img-kategori {
     width: 100%;
     height: 100%;
@@ -315,8 +313,56 @@ button:hover {
 /* End List Gallery */
 
 /* Movies page */
-.moviesPage{
-padding-top: 100px;
+.moviesPage {
+  padding-top: 100px;
 }
 
 /* Akhir Movies Page */
+
+/* Detail movies */
+.detail {
+  width: 100%;
+  height: 420px;
+  color: #fff;
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.thumb {
+  width: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.thumb img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.imgmobile {
+  display: none;
+}
+
+.imgdesktop {
+  display: block;
+}
+
+@media (max-width: 728px) {
+  .imgmobile {
+    display: block;
+    /* tampilkan pada ukuran layar mobile */
+  }
+
+  .imgdesktop {
+    display: none;
+  }
+}
+/* akhir Detail Movies */
