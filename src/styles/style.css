@@ -310,6 +310,10 @@ button:hover {
   margin-left: -40px;
 }
 
+.navigation-kategori .nav-link.active {
+  border-bottom: 2px solid red; /* Ubah warna dan gaya garis sesuai kebutuhan */
+}
+
 /* End List Gallery */
 
 /* Movies page */
