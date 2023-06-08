@@ -1,4 +1,4 @@
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import Login from "../pages/Auth/Login";
 import Home from "../pages/Home";
 import Movies from "../pages/Movies";
@@ -10,6 +10,7 @@ const routes = [
       <>
         <Navbar />
         <Home />
+        <Footer />
       </>
     ),
     path: "/",
@@ -19,6 +20,7 @@ const routes = [
       <>
         <Navbar />
         <Movies />
+        <Footer />
       </>
     ),
     path: "/movies",
@@ -28,6 +30,7 @@ const routes = [
       <>
         <Navbar />
         <MovieDetail />
+        <Footer />
       </>
     ),
     path: "/detail/:movieId",

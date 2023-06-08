@@ -8,3 +8,4 @@ export { default as CardMovies } from "./Molekul/CardMovies";
 export { default as ListMoviesHome } from "./Organs/ListMoviesHome";
 export { default as MoviesList } from "./Organs/MoviesList";
 export { default as MoviesSearch } from "./Organs/MoviesSearch";
+export { default as Footer } from "./Molekul/Footer";
