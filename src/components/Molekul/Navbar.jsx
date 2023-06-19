@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Icon from "../../Icon.png";
 
 function Navbar() {
@@ -58,31 +58,31 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <Link
+            <NavLink
               className={`nav-link ${
                 location.pathname === "/" ? "active" : ""
               }`}
               to="/"
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               className={`nav-link ${
                 location.pathname === "/movies" ? "active" : ""
               }`}
               to="/movies"
             >
               Movies
-            </Link>
+            </NavLink>
             {/*  Button modal*/}
-            <Link
+            <NavLink
               className={`nav-link ${
                 location.pathname === "/login" ? "active" : ""
               }`}
               to="/login"
             >
               Login
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

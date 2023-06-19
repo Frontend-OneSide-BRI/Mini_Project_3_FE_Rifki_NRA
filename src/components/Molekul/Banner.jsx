@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Banner(props) {
-  const data = props.data;
+  
   return (
     <div className="container">
       <div className="banner p-4">
