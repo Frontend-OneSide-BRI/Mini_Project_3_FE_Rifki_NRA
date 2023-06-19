@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ButtonAtom from "../Atom/button";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Banner(props) {
