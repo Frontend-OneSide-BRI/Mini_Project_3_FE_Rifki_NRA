@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+}
+/* Making Class */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* End Making Clas */
+
+/* ATOM */
+.btn-darkpurple {
+  background-image: linear-gradient(#000, #300558);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.btn-darkpurple:hover {
+  transform: scale(1.2);
+}
+
+.rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+}
+
+/* End Atom */
+
+/* Navbar */
+.navbar {
+  transition: 0.5s;
+  font-size: large;
+}
+
+.bg-darkpurple {
+  background-color: #250246;
+}
+
+.navbar button {
+  text-align: left;
+}
+
+.icon {
+  width: 85px;
+  height: 60px;
+}
+
+.icon img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-brand span {
+  font-family: cursive;
+  letter-spacing: 3px;
+}
+
+.mtFix {
+  padding-top: 100px;
+}
+
+.navbar .nav-link {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+/* end Navbar */
+
+/* Carousel */
+.slider {
+  position: relative;
+}
+.carousel-item {
+  height: 600px;
+  width: 100%;
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* End Carousel */
+
+/* banner */
+.banner {
+  width: 80%;
+  color: #fff;
+  position: absolute;
+  bottom: 11%;
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.banner h1 {
+  text-shadow: 5px 5px 10px #000;
+  font-size: 60px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1000px) {
+  .banner {
+    width: 75%;
+  }
+
+  .banner h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  .banner {
+    width: 75%;
+  }
+
+  .banner h1 {
+    font-size: 40px;
+  }
+  @media (max-width: 470px) {
+    .banner {
+      width: 90%;
+    }
+  }
+}
+/* End banner */
+
+/* TOP 3 Movie */
+
+.card-overlay {
+  margin-bottom: 10px;
+}
+
+.categorySection h1 {
+  font-size: 34px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 5px;
+  color: #000;
+  font-family: "Pacifico", cursive;
+}
+
+.img-kategori {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  border: 3px solid #fb93ff;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.img-kategori img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-kategori:hover .overlay {
+  opacity: 1;
+}
+
+.overlay p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.centered-hr {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  border: none;
+  height: 6px;
+  /* Set the hr color */
+  color: #000; /* old IE */
+  background-color: #000; /* Modern Browsers */
+}
+
+@media (max-width: 720px) {
+  .img-kategori {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* End Top 3 Movie */
+
+/* List Galerry */
+
+.img-listCard {
+  width: 100%;
+  height: 100%;
+}
+
+.img-listCard img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.img-listCard:hover .overlayGallery {
+  opacity: 1;
+}
+
+.overlayGallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 108%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlayGallery p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.navigation-kategori .nav-link.active {
+  border-bottom: 2px solid red; /* Ubah warna dan gaya garis sesuai kebutuhan */
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button:hover .fa.fa-search {
+  color: blue;
+}
+
+button:hover {
+  color: blue;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
+
+.navigation-kategori .nav-link.active {
+  border-bottom: 2px solid red; /* Ubah warna dan gaya garis sesuai kebutuhan */
+}
+
+/* End List Gallery */
+
+/* Movies page */
+.moviesPage {
+  padding-top: 100px;
+}
+
+/* Akhir Movies Page */
+
+/* Detail movies */
+.detail {
+  width: 100%;
+  height: 420px;
+  color: #fff;
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.thumb {
+  width: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.thumb img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.imgmobile {
+  display: none;
+}
+
+.imgdesktop {
+  display: block;
+}
+
+@media (max-width: 728px) {
+  .imgmobile {
+    display: block;
+    /* tampilkan pada ukuran layar mobile */
+  }
+
+  .imgdesktop {
+    display: none;
+  }
+}
+/* akhir Detail Movies */
