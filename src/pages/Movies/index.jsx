@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchMovies } from "../../services/movies/moviesApi";
 import { MoviesList, MoviesSearch } from "../../components";
+import {Link} from 'react-router-dom'
 
 function Movies() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -42,52 +43,52 @@ function Movies() {
       <div className="navigation-kategori mb-5">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <a
+            <Link
               className={`nav-link ${
                 selectedCategory === "all" ? "active text-white" : "text-white"
               }`}
               onClick={() => handleCategoryClick("all")}
-              href="#"
+              to="#"
             >
               All Movies
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className={`nav-link ${
                 selectedCategory === "Horror" ? "active text-white" : "text-white"
               }`}
               onClick={() => handleCategoryClick("Horror")}
-              href="#"
+              to="#"
             >
               Horror
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className={`nav-link ${
                 selectedCategory === "Adventure"
                   ? "active text-white"
                   : "text-white"
               }`}
               onClick={() => handleCategoryClick("Adventure")}
-              href="#"
+              to="#"
             >
               Adventure
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className={`nav-link ${
                 selectedCategory === "Fantasy"
                   ? "active text-white"
                   : "text-white"
               }`}
               onClick={() => handleCategoryClick("Fantasy")}
-              href="#"
+              to="#"
             >
               Fantasy
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

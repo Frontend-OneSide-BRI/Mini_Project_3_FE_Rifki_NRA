@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Icon from "../../Icon.png";
 
 function Navbar() {
@@ -39,12 +39,12 @@ function Navbar() {
   return (
     <nav className={navbarClass}>
       <div className="container">
-        <a className="navbar-brand d-flex" href="#">
+        <Link className="navbar-brand d-flex" to="#">
           <div className="icon">
             <img src={Icon} alt="" />
           </div>
           <span className="mt-2 fs-4">Mr.Movies</span>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -58,31 +58,31 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <NavLink
+            <Link
               className={`nav-link ${
                 location.pathname === "/" ? "active" : ""
               }`}
               to="/"
             >
               Home
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               className={`nav-link ${
                 location.pathname === "/movies" ? "active" : ""
               }`}
               to="/movies"
             >
               Movies
-            </NavLink>
+            </Link>
             {/*  Button modal*/}
-            <NavLink
+            <Link
               className={`nav-link ${
                 location.pathname === "/login" ? "active" : ""
               }`}
               to="/login"
             >
               Login
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>
