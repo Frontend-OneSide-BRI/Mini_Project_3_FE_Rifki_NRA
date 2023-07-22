@@ -4,7 +4,7 @@ import axios from "axios";
 const API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZGRkZWY4YTg2MTQxOWQ2MzJkNTcxMTczNDZhNzczOCIsInN1YiI6IjY0N2VlMTMyY2Y0YjhiMDE0MTkwYWRhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6HCf2XcLcG634G22W928Dzj9PeW__gMyVlhc-Tk66z4";
 
-const fetchPopularMovies = createAsyncThunk(
+export const fetchPopularMovies = createAsyncThunk(
   "movies/fetchPopularMovies",
   async (page) => {
     const response = await axios.get(
@@ -24,7 +24,7 @@ const fetchPopularMovies = createAsyncThunk(
   }
 );
 
-const fetchNowPlayingMovies = createAsyncThunk(
+export const fetchNowPlayingMovies = createAsyncThunk(
   "movies/fetchNowPlayingMovies",
   async (page) => {
     const response = await axios.get(
@@ -44,7 +44,7 @@ const fetchNowPlayingMovies = createAsyncThunk(
   }
 );
 
-const fetchTopRatedMovies = createAsyncThunk(
+export const fetchTopRatedMovies = createAsyncThunk(
   "movies/fetchTopRatedMovies",
   async () => {
     const response = await axios.get(
@@ -61,7 +61,7 @@ const fetchTopRatedMovies = createAsyncThunk(
   }
 );
 
-const fetchMovieDetail = createAsyncThunk(
+export const fetchMovieDetail = createAsyncThunk(
   "movies/fetchMovieDetail",
   async (movieId) => {
     const response = await axios.get(
@@ -77,26 +77,29 @@ const fetchMovieDetail = createAsyncThunk(
   }
 );
 
-const searchMovies = createAsyncThunk("movies/searchMovies", async (query) => {
-  try {
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/search/movie",
-      {
-        params: {
-          query: query,
-        },
-        headers: {
-          Authorization: `Bearer ${API_KEY}`,
-          Accept: "application/json",
-        },
-      }
-    );
+export const searchMovies = createAsyncThunk(
+  "movies/searchMovies",
+  async (query) => {
+    try {
+      const response = await axios.get(
+        "https://api.themoviedb.org/3/search/movie",
+        {
+          params: {
+            query: query,
+          },
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            Accept: "application/json",
+          },
+        }
+      );
 
-    return response.data.results;
-  } catch (error) {
-    throw new Error("Error searching movies.");
+      return response.data.results;
+    } catch (error) {
+      throw new Error("Error searching movies.");
+    }
   }
-});
+);
 
 export default {
   fetchNowPlayingMovies,
