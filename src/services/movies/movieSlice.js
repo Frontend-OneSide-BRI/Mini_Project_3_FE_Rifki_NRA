@@ -4,10 +4,9 @@ import moviesApi from "./moviesApi";
 const moviesSlice = createSlice({
   name: "movies",
   initialState: {
-    nowPlaying: [],
-    topRated: [],
     popular: [],
-    searchResults: [],
+    topRated: [],
+    filterResults: [],
     status: "idle",
     detail: null, // Menambah state untuk detail film
   },
@@ -63,9 +62,20 @@ const moviesSlice = createSlice({
       })
       .addCase(moviesApi.searchMovies.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.searchResults = action.payload;
+        state.filterResults = action.payload;
       })
       .addCase(moviesApi.searchMovies.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(moviesApi.genresMovies.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(moviesApi.genresMovies.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.filterResults = action.payload;
+      })
+      .addCase(moviesApi.genresMovies.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

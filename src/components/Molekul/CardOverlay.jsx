@@ -1,7 +1,9 @@
 import React from "react";
 import { RatingAtom } from "..";
+import { Link } from "react-router-dom";
 function CardOverlay(props) {
   return (
+    <Link to={`detail/${props.paramID}`}>
     <section className="card-overlay">
       <div className="img-kategori">
         <RatingAtom rating  = {props.rating} />
@@ -16,6 +18,8 @@ function CardOverlay(props) {
         </div>
       </div>
     </section>
+    </Link>
+    
   );
 }
 

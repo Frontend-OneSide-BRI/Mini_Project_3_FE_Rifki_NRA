@@ -1,7 +1,7 @@
 import React  from "react";
 import CardMovies from "../Molekul/CardMovies";
 
-const MoviesSearch= ({movies}) => {
+const MoviesFilter= ({movies}) => {
 
 
   return (
@@ -27,4 +27,4 @@ const MoviesSearch= ({movies}) => {
   );
 };
 
-export default MoviesSearch;
+export default MoviesFilter;

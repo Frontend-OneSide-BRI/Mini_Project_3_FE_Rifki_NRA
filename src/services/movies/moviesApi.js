@@ -101,10 +101,35 @@ export const searchMovies = createAsyncThunk(
   }
 );
 
+export const genresMovies = createAsyncThunk(
+  "movies/genresMovies",
+  async (category) => {
+    try {
+      const response = await axios.get(
+        "https://api.themoviedb.org/3/discover/movie",
+        {
+          params: {
+            with_genres: category,
+          },
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            Accept: "application/json",
+          },
+        }
+      );
+
+      return response.data.results;
+    } catch (error) {
+      throw new Error("Error filtering movies.");
+    }
+  }
+);
+
 export default {
   fetchNowPlayingMovies,
   fetchTopRatedMovies,
   fetchPopularMovies,
   fetchMovieDetail,
   searchMovies,
+  genresMovies,
 };

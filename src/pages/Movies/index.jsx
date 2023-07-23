@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchMovies } from "../../services/movies/moviesApi";
-import { MoviesList, MoviesSearch } from "../../components";
+import { genresMovies, searchMovies } from "../../services/movies/moviesApi";
+import { MoviesList, MoviesFilter } from "../../components";
 import {Link} from 'react-router-dom'
 
 function Movies() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const dispatch = useDispatch();
-  const searchResults = useSelector((state) => state.movies.searchResults);
+  const filterResults = useSelector((state) => state.movies.filterResults);
   const loading = useSelector((state) => state.movies.loading);
   const error = useSelector((state) => state.movies.error);
 
@@ -17,13 +17,15 @@ function Movies() {
   };
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    dispatch(searchMovies("", category));
   };
   
   useEffect(() => {
-    dispatch(searchMovies(searchQuery, selectedCategory));
-  }, [dispatch, searchQuery, selectedCategory]);
+    dispatch(searchMovies(searchQuery));
+  }, [dispatch, searchQuery]);
 
+  useEffect(()=>{
+    dispatch(genresMovies(selectedCategory));
+  }, [dispatch, selectedCategory])
   return (
     <div className="moviesPage container">
       <h1 className="text-white">Popular Movies</h1>
@@ -56,9 +58,9 @@ function Movies() {
           <li className="nav-item">
             <Link
               className={`nav-link ${
-                selectedCategory === "Horror" ? "active text-white" : "text-white"
+                selectedCategory === 27 ? "active text-white" : "text-white"
               }`}
-              onClick={() => handleCategoryClick("Horror")}
+              onClick={() => handleCategoryClick(27)}
               to="#"
             >
               Horror
@@ -67,11 +69,11 @@ function Movies() {
           <li className="nav-item">
             <Link
               className={`nav-link ${
-                selectedCategory === "Adventure"
+                selectedCategory === 12
                   ? "active text-white"
                   : "text-white"
               }`}
-              onClick={() => handleCategoryClick("Adventure")}
+              onClick={() => handleCategoryClick(12)}
               to="#"
             >
               Adventure
@@ -80,25 +82,24 @@ function Movies() {
           <li className="nav-item">
             <Link
               className={`nav-link ${
-                selectedCategory === "Fantasy"
+                selectedCategory === 16
                   ? "active text-white"
                   : "text-white"
               }`}
-              onClick={() => handleCategoryClick("Fantasy")}
+              onClick={() => handleCategoryClick(16)}
               to="#"
             >
-              Fantasy
+              Animation
             </Link>
           </li>
         </ul>
       </div>
-      {console.log(selectedCategory)}
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
       {!loading && !error && (
         <>
-          {searchResults && searchResults.length > 0 ? (
-            <MoviesSearch movies={searchResults} />
+          {filterResults && filterResults.length > 0 ? (
+            <MoviesFilter movies={filterResults} />
           ) : (
             <>
               <MoviesList />
