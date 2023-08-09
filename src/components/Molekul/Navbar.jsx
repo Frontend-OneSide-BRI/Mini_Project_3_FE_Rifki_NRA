@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Icon from "../../Icon.png";
+import { useUserContext } from "../../app/userContext";
 
 function Navbar() {
   const [scrollDirection, setScrollDirection] = useState("up");
   const location = useLocation();
   const navigate = useNavigate();
   const token = localStorage.getItem("token")
+  const { foundUser, setFoundUser} = useUserContext();
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -40,9 +42,14 @@ function Navbar() {
 
   const handleLogout = () => {
     // Hapus token dari penyimpanan sesi
-    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
+    setFoundUser(null);
     // Alihkan pengguna ke halaman login
-    navigate("/login");
+    navigate("/",{
+      state: {
+        successMessage: "Logout Berhasil",
+      },
+    });
   };
   return (
     <nav className={navbarClass}>
@@ -84,9 +91,20 @@ function Navbar() {
             </Link>
             {/*  Button modal*/}
             {token && token.length ? (
-              <button className="nav-link" onClick={handleLogout}>
+              <>
+                  <Link
+              className={`nav-link ${
+                location.pathname === "/favorite" ? "active" : ""
+              }`}
+              to="/favorite"
+            >
+              Favorite
+            </Link>
+            <button className="nav-link" onClick={handleLogout}>
               Logout
             </button>
+              </>
+           
             ) : (
               <Link
                 className={`nav-link ${

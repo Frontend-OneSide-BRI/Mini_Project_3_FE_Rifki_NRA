@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import userDummy from "./dummyUser";
+import { useUserContext } from "../../app/userContext"; 
 
 function Login() {
   const API_KEY =
@@ -12,6 +13,7 @@ function Login() {
   const [showError, setShowError] = useState(false); // State untuk mengontrol tampilan pesan kesalahan
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
+  const { setFoundUser } = useUserContext();
 
   // const fetchRequestToken = async () => {
   //   try {
@@ -60,6 +62,7 @@ function Login() {
 
       if (foundUser) {
         localStorage.setItem("token", (dummyToken.token = true));
+        setFoundUser(foundUser);
         navigate("/", {
           state: {
             successMessage: "Login Berhasil",
