@@ -12,6 +12,7 @@ const MovieDetail = () => {
   const error = useSelector((state) => state.movies.error); // Menggunakan state.movies.detailError
 
   useEffect(() => {
+    document.title = `Detail Movie`
     dispatch(fetchMovieDetail(movieId));
   }, [dispatch, movieId]);
 

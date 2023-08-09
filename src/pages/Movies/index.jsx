@@ -5,6 +5,7 @@ import { MoviesList, MoviesFilter } from "../../components";
 import {Link} from 'react-router-dom'
 
 function Movies() {
+ 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const dispatch = useDispatch();
@@ -18,14 +19,13 @@ function Movies() {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
+
   
   useEffect(() => {
-    dispatch(searchMovies(searchQuery));
-  }, [dispatch, searchQuery]);
-
-  useEffect(()=>{
-    dispatch(genresMovies(selectedCategory));
-  }, [dispatch, selectedCategory])
+     document.title = "List Movie"
+     dispatch(searchMovies(searchQuery));
+     dispatch(genresMovies(selectedCategory));
+  }, [dispatch, searchQuery, selectedCategory]);
   return (
     <div className="moviesPage container">
       <h1 className="text-white">Popular Movies</h1>

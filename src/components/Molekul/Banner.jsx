@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Banner(props) {
@@ -12,7 +13,9 @@ function Banner(props) {
         <div className="body mb-2">
         </div>
         <div className="footer">
-          <a href="/movies" className="btn btn-darkpurple">Show Movies</a>
+          <Link className="btn btn-darkpurple" to="/movies">
+          Show Movies
+          </Link>
         </div>
       </div>
     </div>

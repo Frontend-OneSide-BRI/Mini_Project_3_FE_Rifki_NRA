@@ -8,6 +8,7 @@ const moviesSlice = createSlice({
     topRated: [],
     filterResults: [],
     status: "idle",
+    error: "",
     detail: null, // Menambah state untuk detail film
   },
   reducers: {},
